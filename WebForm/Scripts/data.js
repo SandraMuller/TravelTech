@@ -29,6 +29,9 @@ function renderRegions(data) {
             $('#MainContent_Regions').append('<option Value="' + item[i].regionValue + '">' + item[i].regionName + '</option>')
         }
     });
+    $('#MainContent_Regions').change(function () {
+        GetLocations();
+    });
 };
 
 function renderLocations(data) {
@@ -38,6 +41,9 @@ function renderLocations(data) {
         for (i in item) {
             $('#MainContent_Locations').append('<option Value="' + item[i].Value + '">' + item[i].Name + '</option>')
         }
+    });
+    $('#MainContent_Locations').change(function () {
+        Description(document.getElementById('MainContent_Locations').value);
     });
 
 };
